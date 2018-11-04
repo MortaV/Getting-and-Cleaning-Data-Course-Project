@@ -5,6 +5,8 @@
  >The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.
 The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
 
+More information about it can be found in the experiment official page [here](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
+
 ## Transformations
 
 As the original data set did not met the conditions of a tidy data set, there were several transformations applied to it. The R code which takes raw data set and transforms it to tidy one is provided in this repository and is called *run_analysis.R*. It includes:
@@ -46,4 +48,71 @@ The R script will create a tidy data set with the following columns:
 
 Column Name | Description
 ------------|------------
-Test | Test
+activity | Activity name
+subject | Subject ID
+MeanOfFrequencyBodyAccelerometerJerkMagnitudeMeanwithoutaxis | Mean of
+MeanOfFrequencyBodyAccelerometerJerkMagnitudeStDevwithoutaxis | Mean of
+MeanOfFrequencyBodyAccelerometerJerkMeanXaxis | Mean of
+MeanOfFrequencyBodyAccelerometerJerkMeanYaxis | Mean of
+MeanOfFrequencyBodyAccelerometerJerkMeanZaxis | Mean of
+MeanOfFrequencyBodyAccelerometerJerkStDevXaxis | Mean of
+MeanOfFrequencyBodyAccelerometerJerkStDevYaxis | Mean of
+MeanOfFrequencyBodyAccelerometerJerkStDevZaxis | Mean of
+MeanOfFrequencyBodyAccelerometerMagnitudeMeanwithoutaxis | Mean of
+MeanOfFrequencyBodyAccelerometerMagnitudeStDevwithoutaxis | Mean of
+MeanOfFrequencyBodyAccelerometerMeanXaxis | Mean of
+MeanOfFrequencyBodyAccelerometerMeanYaxis | Mean of
+MeanOfFrequencyBodyAccelerometerMeanZaxis | Mean of
+MeanOfFrequencyBodyAccelerometerStDevXaxis | Mean of
+MeanOfFrequencyBodyAccelerometerStDevYaxis | Mean of
+MeanOfFrequencyBodyAccelerometerStDevZaxis | Mean of
+MeanOfFrequencyBodyGyroscopeJerkMagnitudeMeanwithoutaxis | Mean of
+MeanOfFrequencyBodyGyroscopeJerkMagnitudeStDevwithoutaxis | Mean of
+MeanOfFrequencyBodyGyroscopeMagnitudeMeanwithoutaxis | Mean of
+MeanOfFrequencyBodyGyroscopeMagnitudeStDevwithoutaxis | Mean of
+MeanOfFrequencyBodyGyroscopeMeanXaxis | Mean of
+MeanOfFrequencyBodyGyroscopeMeanYaxis | Mean of
+MeanOfFrequencyBodyGyroscopeMeanZaxis | Mean of
+MeanOfFrequencyBodyGyroscopeStDevXaxis | Mean of
+MeanOfFrequencyBodyGyroscopeStDevYaxis | Mean of
+MeanOfFrequencyBodyGyroscopeStDevZaxis | Mean of
+MeanOfTimeBodyAccelerometerJerkMagnitudeMeanwithoutaxis | Mean of
+MeanOfTimeBodyAccelerometerJerkMagnitudeStDevwithoutaxis | Mean of
+MeanOfTimeBodyAccelerometerJerkMeanXaxis | Mean of
+MeanOfTimeBodyAccelerometerJerkMeanYaxis | Mean of
+MeanOfTimeBodyAccelerometerJerkMeanZaxis | Mean of
+MeanOfTimeBodyAccelerometerJerkStDevXaxis | Mean of
+MeanOfTimeBodyAccelerometerJerkStDevYaxis | Mean of
+MeanOfTimeBodyAccelerometerJerkStDevZaxis | Mean of
+MeanOfTimeBodyAccelerometerMagnitudeMeanwithoutaxis | Mean of
+MeanOfTimeBodyAccelerometerMagnitudeStDevwithoutaxis | Mean of
+MeanOfTimeBodyAccelerometerMeanXaxis | Mean of
+MeanOfTimeBodyAccelerometerMeanYaxis | Mean of
+MeanOfTimeBodyAccelerometerMeanZaxis | Mean of
+MeanOfTimeBodyAccelerometerStDevXaxis | Mean of
+MeanOfTimeBodyAccelerometerStDevYaxis | Mean of
+MeanOfTimeBodyAccelerometerStDevZaxis | Mean of
+MeanOfTimeBodyGyroscopeJerkMagnitudeMeanwithoutaxis | Mean of
+MeanOfTimeBodyGyroscopeJerkMagnitudeStDevwithoutaxis | Mean of
+MeanOfTimeBodyGyroscopeJerkMeanXaxis | Mean of
+MeanOfTimeBodyGyroscopeJerkMeanYaxis | Mean of
+MeanOfTimeBodyGyroscopeJerkMeanZaxis | Mean of
+MeanOfTimeBodyGyroscopeJerkStDevXaxis | Mean of
+MeanOfTimeBodyGyroscopeJerkStDevYaxis | Mean of
+MeanOfTimeBodyGyroscopeJerkStDevZaxis | Mean of
+MeanOfTimeBodyGyroscopeMagnitudeMeanwithoutaxis | Mean of
+MeanOfTimeBodyGyroscopeMagnitudeStDevwithoutaxis | Mean of
+MeanOfTimeBodyGyroscopeMeanXaxis | Mean of
+MeanOfTimeBodyGyroscopeMeanYaxis | Mean of
+MeanOfTimeBodyGyroscopeMeanZaxis | Mean of
+MeanOfTimeBodyGyroscopeStDevXaxis | Mean of
+MeanOfTimeBodyGyroscopeStDevYaxis | Mean of
+MeanOfTimeBodyGyroscopeStDevZaxis | Mean of
+MeanOfTimeGravityAccelerometerMagnitudeMeanwithoutaxis | Mean of
+MeanOfTimeGravityAccelerometerMagnitudeStDevwithoutaxis | Mean of
+MeanOfTimeGravityAccelerometerMeanXaxis | Mean of
+MeanOfTimeGravityAccelerometerMeanYaxis | Mean of
+MeanOfTimeGravityAccelerometerMeanZaxis | Mean of
+MeanOfTimeGravityAccelerometerStDevXaxis | Mean of
+MeanOfTimeGravityAccelerometerStDevYaxis | Mean of
+MeanOfTimeGravityAccelerometerStDevZaxis | Mean of
