@@ -1,6 +1,6 @@
 # Getting-and-Cleaning-Data-Course-Project
 
-This repository is used for Data Science Specialization (Exploratory Data Analysis part) peer assignment.
+This repository is used for Data Science Specialization (Getting and Cleaning Data part) peer assignment.
 
 There are 3 files in it:
 * **CodeBook.md** - describes the variables, the data, and any transformations used to clean up the data;
