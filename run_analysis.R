@@ -128,7 +128,8 @@ mean_and_sd_tidy <- mean_and_sd %>%
     # spreading back to columns
     spread(measuretospread, measure) %>%
     # removing dummy variable
-    select(-tospreadback)
+    select(-tospreadback) %>%
+    ungroup()
 
 
 # creating summary dataset (mean of each variable, grouped by activity and subject)
