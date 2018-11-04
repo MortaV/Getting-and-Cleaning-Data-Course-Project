@@ -21,7 +21,7 @@ if (!file.exists(data_folder)){
 download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip",
               "data/wf.zip")
 
-unzip("data\wf.zip", exdir = data_folder)
+unzip("data/wf.zip", exdir = data_folder)
 
 # creating paths for all needed files
 test_folder <- "data/UCI HAR Dataset/test"
@@ -82,6 +82,9 @@ full_data <- as.tbl(full_data)
 mean_and_sd <- full_data %>%
     select(ycol, subcol, contains("mean()"), contains("std()"))
 
+# checking how all different names look like, that I could decide what is needed
+unique(names(mean_and_sd))
+
 #creating a tidy dataset
 mean_and_sd_tidy <- mean_and_sd %>%
     # adding activity names from activity dataset
@@ -108,27 +111,33 @@ mean_and_sd_tidy <- mean_and_sd %>%
            signal = str_replace_all(signal, "Acc", "Accelerometer"),
            signal = str_replace_all(signal, "Gyro", "Gyroscope"),
            signal = str_replace_all(signal, "Mag", "Magnitude"),
-           value = ifelse(value == "mean()", "mean", "sd"),
+           signal = str_replace_all(signal, "BodyBody", "Body"),
+           value = ifelse(value == "mean()", "Mean", "StDev"),
            direction = ifelse(is.na(direction), 
-                              direction, 
+                              "withoutaxis", 
                               paste0(direction, "axis"))) %>%
     # bringing columns back to one
     unite(measuretospread, 
-          c("value", "domaintype", "signal", "direction"), 
+          c("domaintype", "signal", "value", "direction"), 
           sep = "") %>%
     # I wasn't able to spread that column back to separate columns due to the 
     # fact that there are several records for each (as it should be) so I created
     # a dummy variable, which would separate all those records
-    mutate(tospreadback = row_number()) %>%
+    group_by(activity, subject, measuretospread) %>%
+    mutate(tospreadback = rank(row_number())) %>%
     # spreading back to columns
     spread(measuretospread, measure) %>%
     # removing dummy variable
     select(-tospreadback)
 
+
 # creating summary dataset (mean of each variable, grouped by activity and subject)
 summary_dataset <- mean_and_sd_tidy %>%
     group_by(activity, subject) %>%
     summarize_all(mean)
+
+# adding an indication that the measures are actually means
+names(summary_dataset) <- paste0("MeanOf", names(summary_dataset))
 
 # creating a txt file with summary dataset
 write.table(summary_dataset,
