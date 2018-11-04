@@ -138,9 +138,11 @@ summary_dataset <- mean_and_sd_tidy %>%
     summarize_all(mean)
 
 # adding an indication that the measures are actually means
-names(summary_dataset) <- paste0("MeanOf", names(summary_dataset))
+names(summary_dataset[,-c(1,2)]) <- paste0("MeanOf", names(summary_dataset))
 
 # creating a txt file with summary dataset
 write.table(summary_dataset,
             "tidy_summarized.txt", 
             row.name=FALSE)
+
+names(summary_dataset)
