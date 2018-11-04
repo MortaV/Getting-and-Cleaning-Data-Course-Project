@@ -48,6 +48,8 @@ The R script will create a tidy data set with the following columns:
 
 Column Name | Description
 ------------|------------
+activity | Activity named
+subject | Subject ID
 MeanOfFrequencyBodyAccelerometerJerkMagnitudeMeanwithoutaxis | Arithmetic average of the gyroscope body motion Jerk signals (in gravity units 'g') without axis indication. Variables were calculated from the frequency domain. Before any calculations, magnitude of these three-dimensional signals were calculated using the Euclidean norm. Original transformation was mean.
 MeanOfFrequencyBodyAccelerometerJerkMagnitudeStDevwithoutaxis | Arithmetic average of the gyroscope body motion Jerk signals (in gravity units 'g') without axis indication. Variables were calculated from the frequency domain. Before any calculations, magnitude of these three-dimensional signals were calculated using the Euclidean norm. Original transformation was standard deviation.
 MeanOfFrequencyBodyAccelerometerJerkMeanXaxis | Arithmetic average of the gyroscope body motion Jerk signals (in gravity units 'g') for Xaxis. Variables were calculated from the frequency domain. Original transformation was mean.
